@@ -1,0 +1,15 @@
+<div class="article-container">
+  <%= for article <- @data.article_list do %>
+    <%# <%= raise article %>
+    <a class="article" target="_blank" href="<%= article.article_src %>">
+      <img src="<%= article.img_src %>">
+      <div class="article__text">
+        <h1><%= article.title %></h1>
+        <%# <p><%= article.description %></p>
+        <p class="article__source">Source: <%= article.source %></p>
+        <p>Published: <%= article.published_at %></p>
+        <button>Inflate</button>
+      </div>
+    </a>
+  <% end %>
+</div>

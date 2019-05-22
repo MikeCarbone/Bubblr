@@ -1,0 +1,18 @@
+<h1>Show Article</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </li>
+
+  <li>
+    <strong>Score:</strong>
+    <%= @article.score %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.article_path(@conn, :edit, @article) %></span>
+<span><%= link "Back", to: Routes.article_path(@conn, :index) %></span>

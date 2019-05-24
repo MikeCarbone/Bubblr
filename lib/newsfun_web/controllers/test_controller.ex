@@ -3,7 +3,7 @@ defmodule NewsfunWeb.TestController do
   alias Newsfun.ArticleFetcherService, as: AFS
 
   def index(conn, _params) do
-      article_list = AFS.fetch_current_feed
+    article_list = AFS.fetch_all_articles_desc()
 
     render(conn, "index.html", data: %{:article_list => article_list})
   end

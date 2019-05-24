@@ -1,4 +1,4 @@
-defmodule Newsfun.ArticleFetcher do
+defmodule Newsfun.ScoreAdjuster do
   use GenServer
   alias Newsfun.ArticleFetcherService, as: AFS
 
@@ -13,22 +13,16 @@ defmodule Newsfun.ArticleFetcher do
 
   def handle_info(:work, state) do
     # Do the work you desire here
-    AFS.push_new_articles()
+    AFS.time_based_score_adjust(6)
     schedule_work()
     {:noreply, state}
   end
 
   defp schedule_work() do
-    Process.send_after(self(), :work, how_many_minutes(5))
+    Process.send_after(self(), :work, how_many_minutes(6))
   end
 
   defp how_many_minutes(minutes) do
     minutes * 1000 * 60
   end
-
-  defp fetch_new_articles do
-  end
-
-  # Check DB if they exist, return list of original articles
-
 end

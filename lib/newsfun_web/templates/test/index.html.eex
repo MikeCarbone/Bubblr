@@ -1,7 +1,7 @@
 <div class="article-container">
   <%= for article <- @data.article_list do %>
-    <%# <%= raise article %>
     <a class="article" target="_blank" href="<%= article.article_src %>">
+      <p>Score: <%= article.score %></p>
       <img src="<%= article.img_src %>">
       <div class="article__text">
         <h1><%= article.title %></h1>

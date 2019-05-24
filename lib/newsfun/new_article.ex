@@ -11,6 +11,7 @@ defmodule Newsfun.NewArticle do
     field :source, :string
     field :img_src, :string
     field :article_src, :string
+    field :description, :string
 
     timestamps()
   end

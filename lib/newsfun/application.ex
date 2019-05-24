@@ -12,7 +12,8 @@ defmodule Newsfun.Application do
       Newsfun.Repo,
       # Start the endpoint when the application starts
       NewsfunWeb.Endpoint,
-      Newsfun.ArticleFetcher
+      Newsfun.ArticleFetcher,
+      Newsfun.ScoreAdjuster
       # Starts a worker by calling: Newsfun.Worker.start_link(arg)
       # {Newsfun.Worker, arg},
     ]
